@@ -94,7 +94,7 @@ const search = async (req, res) => {
         const { data, error } = await supabase
             .from('puskesmas')
             .select('*')
-            .ilike('namaPuskesmas', namaPuskesmas)
+            .ilike('namaPuskesmas', %namaPuskesmas%)
         if (error) {
             return res.json(error)
         }
